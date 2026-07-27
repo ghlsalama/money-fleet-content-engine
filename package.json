@@ -1,0 +1,23 @@
+{
+  "name": "content-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Autonomous niche content engine (backyard astronomy). Researches, drafts, fact-checks, publishes, and repurposes articles on a schedule, hands-off.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "once": "node src/index.js",
+    "daemon": "node src/index.js --daemon",
+    "dry": "DRY_RUN=true node src/index.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "marked": "^12.0.2",
+    "node-cron": "^3.0.3"
+  }
+}

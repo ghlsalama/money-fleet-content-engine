@@ -1,0 +1,6 @@
+node_modules/
+.env
+.DS_Store
+npm-debug.log*
+# NOTE: state.json, content/, and docs/ are intentionally tracked so the scheduled
+# GitHub Actions run can persist "what's published" and serve the static site.

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Celestron Cometron 7x50 Binoculars",
+    "query": "Celestron Cometron 7x50 binoculars",
+    "note": "A great low-cost first pair for wide-field views of the Milky Way and big star clusters.",
+    "topics": ["binoculars", "milky", "general", "beginner"]
+  },
+  {
+    "name": "Orion SkyScanner 100mm Tabletop Reflector",
+    "query": "Orion SkyScanner 100mm tabletop reflector telescope",
+    "note": "A compact, affordable starter scope that sits on a table — quick to set up and genuinely usable.",
+    "topics": ["telescope", "beginner", "reflector", "general"]
+  },
+  {
+    "name": "Gskyer 70mm Travel Refractor",
+    "query": "Gskyer 70mm travel refractor telescope",
+    "note": "A lightweight refractor for lunar and planetary glimpses; comes with a carry bag.",
+    "topics": ["telescope", "refractor", "beginner", "moon", "planet"]
+  },
+  {
+    "name": "Celestron StarSense Explorer DX 102AZ",
+    "query": "Celestron StarSense Explorer DX 102AZ telescope",
+    "note": "Uses your phone to guide you to targets — a real confidence-builder for first-timers.",
+    "topics": ["telescope", "smartphone", "beginner"]
+  },
+  {
+    "name": "Svbony 1.25\" Plossl Eyepiece Set",
+    "query": "Svbony 1.25 Plossl eyepiece set",
+    "note": "Inexpensive eyepieces in the most useful focal lengths to expand your magnification range.",
+    "topics": ["eyepiece", "magnification", "general"]
+  },
+  {
+    "name": "Orion Shorty 2x Barlow Lens",
+    "query": "Orion Shorty 2x Barlow lens 1.25",
+    "note": "Doubles the magnification of any eyepiece you already own for lunar and planetary detail.",
+    "topics": ["eyepiece", "barlow", "magnification", "planet", "moon"]
+  },
+  {
+    "name": "Celestron Star Pointer Pro Red-Dot Finder",
+    "query": "Celestron Star Pointer Pro red dot finder",
+    "note": "A simple reflex sight that makes aiming your scope far easier than a tiny finderscope.",
+    "topics": ["finder", "align", "beginner"]
+  },
+  {
+    "name": "Orion RedBeam LED Astronomy Flashlight",
+    "query": "Orion RedBeam LED astronomy flashlight red light",
+    "note": "A red light preserves your night vision while you read charts at the scope.",
+    "topics": ["flashlight", "red light", "general", "beginner", "dark adaptation"]
+  },
+  {
+    "name": "Orion Planisphere Star Wheel",
+    "query": "Orion planisphere star wheel",
+    "note": "A no-batteries dial that shows what is up on any night — the ideal first chart.",
+    "topics": ["chart", "planisphere", "beginner", "constellation"]
+  },
+  {
+    "name": "'Turn Left at Orion' Guidebook",
+    "query": "Turn Left at Orion book",
+    "note": "The single best beginner guide to what to look at and exactly how to find it.",
+    "topics": ["book", "beginner", "general", "constellation"]
+  },
+  {
+    "name": "Celestron EclipSmart Solar Filter (white-light)",
+    "query": "Celestron EclipSmart solar filter telescope white light",
+    "note": "Certified-safe white-light solar viewing for sunspots and eclipses — never look at the Sun without one.",
+    "topics": ["solar", "sun", "filter", "safety"]
+  },
+  {
+    "name": "Orion SteadyPix Smartphone Adapter",
+    "query": "Orion SteadyPix smartphone telescope adapter",
+    "note": "Clamps your phone to an eyepiece for easy afocal photos of the Moon and planets.",
+    "topics": ["smartphone", "astrophotography", "phone"]
+  }
+]

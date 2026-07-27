@@ -1,0 +1,73 @@
+# Autonomous content pipeline. Runs twice a week on a schedule (no server, no cost).
+# This workflow IS the scheduler: after you provision it, articles are researched,
+# drafted, fact-checked, published, and repurposed with zero ongoing human work.
+name: content-publish
+
+on:
+  schedule:
+    # Tuesdays & Fridays at 10:30 UTC. (GitHub Actions cron is UTC.)
+    - cron: '30 10 * * 2,5'
+  workflow_dispatch: {} # manual "Run workflow" button for testing
+
+permissions:
+  contents: write # needed to commit generated posts/state back
+
+# Never run two content jobs at once; do NOT cancel one mid-publish.
+concurrency:
+  group: content-engine
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm install --no-audit --no-fund
+
+      - name: Run content pipeline (one-shot)
+        env:
+          # Only LLM_API_KEY is truly required. Everything else is optional and
+          # degrades gracefully (missing channels are skipped, not fatal).
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          SITE_NAME: ${{ secrets.SITE_NAME }}
+          SITE_TAGLINE: ${{ secrets.SITE_TAGLINE }}
+          BLOG_BASE_URL: ${{ secrets.BLOG_BASE_URL }}
+          CMS: ${{ secrets.CMS }}
+          HASHNODE_TOKEN: ${{ secrets.HASHNODE_TOKEN }}
+          HASHNODE_PUBLICATION_ID: ${{ secrets.HASHNODE_PUBLICATION_ID }}
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          BLUESKY_IDENTIFIER: ${{ secrets.BLUESKY_IDENTIFIER }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+          AMAZON_ASSOC_TAG: ${{ secrets.AMAZON_ASSOC_TAG }}
+          AFFILIATE_DISCLOSURE: ${{ secrets.AFFILIATE_DISCLOSURE }}
+          ADSENSE_CLIENT: ${{ secrets.ADSENSE_CLIENT }}
+          ADSENSE_SLOT: ${{ secrets.ADSENSE_SLOT }}
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+          DISCLOSE_AI: 'true'
+          DRY_RUN: 'false'
+        run: node src/index.js
+
+      # Persist state + generated content back to the repo so the next run knows
+      # what has already been published (and so the static site, if used, updates).
+      - name: Commit generated state + content
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state.json content docs 2>/dev/null || true
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "chore(content): automated publish $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+          else
+            echo "Nothing to commit (no new post produced)."
+          fi
