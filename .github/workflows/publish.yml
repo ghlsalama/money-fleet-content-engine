@@ -7,7 +7,12 @@ on:
   schedule:
     # Tuesdays & Fridays at 10:30 UTC. (GitHub Actions cron is UTC.)
     - cron: '30 10 * * 2,5'
-  workflow_dispatch: {} # manual "Run workflow" button for testing
+  workflow_dispatch: # manual "Run workflow" button for testing / seeding
+    inputs:
+      force:
+        description: 'Bypass the 12h duplicate guard and force a publish now'
+        type: boolean
+        default: false
 
 permissions:
   contents: write # needed to commit generated posts/state back
@@ -56,6 +61,7 @@ jobs:
           NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
           DISCLOSE_AI: 'true'
           DRY_RUN: 'false'
+          FORCE_RUN: ${{ github.event.inputs.force == 'true' && '1' || '' }}
         run: node src/index.js
 
       # Persist state + generated content back to the repo so the next run knows
