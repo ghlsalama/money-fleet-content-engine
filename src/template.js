@@ -39,14 +39,14 @@ function head({ title, description, canonical, jsonLd }) {
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_article">
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="${esc(config.blogBaseUrl)}/style.css">
 </head>`;
 }
 
 function header() {
   return `<body>
 <header class="site"><div class="wrap">
-  <a href="/" class="brand">${esc(config.siteName)}</a>
+  <a href="${esc(config.blogBaseUrl)}/" class="brand">${esc(config.siteName)}</a>
   <p class="tagline">${esc(config.siteTagline)}</p>
 </div></header>
 <main class="wrap">`;
@@ -88,7 +88,7 @@ export function renderIndex(posts = []) {
     .sort((a, b) => (a.at < b.at ? 1 : -1))
     .map(
       (p) =>
-        `<li><a href="/posts/${esc(p.slug)}.html">${esc(p.title)}</a> <time>${esc(
+        `<li><a href="${esc(config.blogBaseUrl)}/posts/${esc(p.slug)}.html">${esc(p.title)}</a> <time>${esc(
           (p.at || '').slice(0, 10),
         )}</time></li>`,
     )
