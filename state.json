@@ -1,47 +1,4 @@
 {
-  "published": [
-    {
-      "id": "find-andromeda-galaxy",
-      "slug": "find-andromeda-galaxy",
-      "title": "Find Andromeda Galaxy",
-      "url": "/posts/find-andromeda-galaxy.html",
-      "at": "2026-07-27T19:22:23.503Z"
-    },
-    {
-      "id": "moon-observing-guide",
-      "slug": "moon-observing-guide",
-      "title": "Moon Observing Guide",
-      "url": "https://ghlsalama.github.io/money-fleet-content-engine/posts/moon-observing-guide.html",
-      "at": "2026-07-28T00:02:20.795Z"
-    },
-    {
-      "id": "solar-viewing-safety",
-      "slug": "how-to-view-the-sun-safely-without-damaging-your-eyes",
-      "title": "How to View the Sun Safely Without Damaging Your Eyes",
-      "url": "https://ghlsalama.github.io/money-fleet-content-engine/posts/how-to-view-the-sun-safely-without-damaging-your-eyes.html",
-      "at": "2026-07-28T00:02:47.434Z"
-    },
-    {
-      "id": "star-charts-apps",
-      "slug": "free-star-charts",
-      "title": "Free Star Charts",
-      "url": "https://ghlsalama.github.io/money-fleet-content-engine/posts/free-star-charts.html",
-      "at": "2026-07-28T00:13:06.768Z"
-    },
-    {
-      "id": "filters-for-observing",
-      "slug": "telescope-filters-101",
-      "title": "Telescope Filters 101",
-      "url": "https://ghlsalama.github.io/money-fleet-content-engine/posts/telescope-filters-101.html",
-      "at": "2026-07-28T00:13:34.175Z"
-    },
-    {
-      "id": "scope-types-compared",
-      "slug": "scope-choice-guide",
-      "title": "Scope Choice Guide",
-      "url": "https://ghlsalama.github.io/money-fleet-content-engine/posts/scope-choice-guide.html",
-      "at": "2026-07-28T00:14:01.306Z"
-    }
-  ],
-  "socialBacklog": []
+  "published": [],
+  "lastPublish": null
 }

@@ -54,7 +54,7 @@ jobs:
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
           MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
           MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
-          AMAZON_ASSOC_TAG: ${{ secrets.AMAZON_ASSOC_TAG }}
+          AMAZON_ASSOC_TAG: ${{ secrets.AMAZON_AFFILIATE_KEY }}
           AFFILIATE_DISCLOSURE: ${{ secrets.AFFILIATE_DISCLOSURE }}
           ADSENSE_CLIENT: ${{ secrets.ADSENSE_CLIENT }}
           ADSENSE_SLOT: ${{ secrets.ADSENSE_SLOT }}
